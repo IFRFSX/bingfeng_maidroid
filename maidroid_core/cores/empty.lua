@@ -18,8 +18,8 @@ maidroid.register_core("maidroid_core:empty", {
 minetest.register_craft{
 	output = "maidroid_core:empty",
 	recipe = {
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot",    "default:obsidian", "default:steel_ingot"},
+		{"default:steel_ingot", "default:gold_ingot", "default:gold_ingot"},
+		{"default:steel_ingot",    "default:mese", "default:gold_ingot"},
 		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
 	},
 }

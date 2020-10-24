@@ -6,7 +6,7 @@
 minetest.register_craft{
 	output = "maidroid:empty_egg",
 	recipe = {
-		{"default:bronze_ingot", "default:bronze_ingot", "default:bronze_ingot"},
+		{"default:bronze_ingot", "default:mese_crystal", "default:bronze_ingot"},
 		{"default:bronze_ingot",  "default:steel_ingot", "default:bronze_ingot"},
 		{"default:bronze_ingot", "default:bronze_ingot", "default:bronze_ingot"},
 	},

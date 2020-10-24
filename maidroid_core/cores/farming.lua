@@ -10,6 +10,12 @@
 -- https://github.com/tacigar/maidroid
 ------------------------------------------------------------
 
+local ethereal_plants={}
+-- ethereal_plants[plant_name_without_steps]={[seed_name]="steps"}
+ethereal_plants["ethereal:strawberry"]={["ethereal:strawberry"]="8"}
+ethereal_plants["ethereal:onion"]={["ethereal:wild_onion_plant"]="5"}
+
+
 local state = {
 	WALK_RANDOMLY = 0,
 	WALK_TO_PLANT = 1,
@@ -40,6 +46,15 @@ else
         end
 end
 
+if minetest.get_modpath("ethereal") then
+    for e1,e2 in pairs(ethereal_plants) do
+        for name,step in pairs(e2) do
+            pl = e1 .. "_" .. step
+            table.insert(target_plants,pl)
+        end
+    end
+end
+
 local _aux = maidroid_core._aux
 
 local FIND_PATH_TIME_INTERVAL = 20
@@ -58,7 +73,7 @@ end
 -- is_mowable_place reports whether maidroid can mow.
 local function is_mowable_place(pos)
 	local node = minetest.get_node(pos)
-	for _, plant in ipairs(target_plants) do
+	for _, plant in pairs(target_plants) do
 		if plant == node.name then
 			return true
 		end
@@ -99,7 +114,6 @@ walk_randomly = function(self, dtime)
 	if self.time_counters[1] >= FIND_PATH_TIME_INTERVAL then
 		self.time_counters[1] = 0
 		self.time_counters[2] = self.time_counters[2] + 1
-
 		local wield_stack = self:get_wield_item_stack()
 		if minetest.get_item_group(wield_stack:get_name(), "seed") > 0
 		or self:has_item_in_main(function(itemname)	return (minetest.get_item_group(itemname, "seed") > 0) end) then
@@ -181,18 +195,29 @@ local is_seed = function(name)
         if minetest.get_item_group(name, "seed") > 0 then
                 return true
         end
+
         for _, v in pairs(farming.registered_plants) do
                 if name == v.seed then
-                        return true
+                    return true
                 end
         end
-        return false
+
+        for s1,s2 in pairs(ethereal_plants) do
+            for n,s in pairs(s2) do
+                if name == n then
+                    return true
+                end
+            end
+        end
+
+    return false
 end
 
 to_plant = function(self)
+    -- minetest.log("开始种植")
 	local wield_stack = self:get_wield_item_stack()
 	if is_seed(wield_stack:get_name())
-        or self:move_main_to_wield(is_seed) then
+    or self:move_main_to_wield(is_seed) then
 		self.state = state.PLANT
 		self.time_counters[1] = 0
 		self.object:setvelocity{x = 0, y = 0, z = 0}
@@ -279,7 +304,17 @@ local get_plantname = function(itemname)
                        return v.crop .. "_1" 
                 end
         end
-        return itemname
+        if minetest.get_modpath("ethereal") then
+            for e1,e2 in pairs(ethereal_plants) do
+                for name,step in pairs(e2) do
+                    if name == itemname then
+                        return e1 .. "_1"
+                        
+                    end
+                end
+            end
+        end
+    return itemname
 end
 
 plant = function(self, dtime)
