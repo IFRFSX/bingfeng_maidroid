@@ -144,7 +144,5 @@ BingFeng-maidroid merged some modified versions of maidroid code made by these p
    + HybridDog
    + Desour
 
-The License("GNU LGPL v2.1" and "CC BY-SA 4.0") is not upgraded.  
-
 - The source code of Maidroid is available under the [LGPLv2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt) or later license.
 - The resouces included in Maidroid are available under the [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) or later license.
