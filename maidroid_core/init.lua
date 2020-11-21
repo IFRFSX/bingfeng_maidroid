@@ -13,6 +13,7 @@ dofile(maidroid_core.modpath .. "/cores/empty.lua")
 dofile(maidroid_core.modpath .. "/cores/basic.lua")
 dofile(maidroid_core.modpath .. "/cores/farming.lua")
 dofile(maidroid_core.modpath .. "/cores/torcher.lua")
+dofile(maidroid_core.modpath .. "/cores/custom.lua")
 if minetest.global_exists("pdisc") then
 	dofile(maidroid_core.modpath .. "/cores/ocr.lua")
 end

@@ -132,10 +132,17 @@ The forum topic for **old version** mod on the Minetest Forums is located at:
 + [This Version](https://github.com/IFRFSX/bingfeng-maidroid "Github")
    + [tacigar's Origin Version](https://github.com/tacigar/maidroid "Github")
    + [thePlasm's Version](https://github.com/thePlasm/maidroid "Github")
+   + [HybridDog's Version](https://github.com/HybridDog/maidroid "Github")
+   + [Desour's Version](https://github.com/Desour/maidroid "Github")
 
 ## Author and License
 
-The bingfeng-maidroid, by IFRFSX, based on tacigar and thePlasm's Version.  
+The bingfeng-maidroid, by IFRFSX, based maidroid by tacigar.  
+
+BingFeng-maidroid merged some modified versions of maidroid code made by these people:  
+   + thePlasm
+   + HybridDog
+   + Desour
 
 The License("GNU LGPL v2.1" and "CC BY-SA 4.0") is not upgraded.  
 
