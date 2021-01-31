@@ -46,12 +46,11 @@ else
         end
 end
 
-if minetest.get_modpath("ethereal") then
-    for e1,e2 in pairs(ethereal_plants) do
-        for name,step in pairs(e2) do
-            pl = e1 .. "_" .. step
-            table.insert(target_plants,pl)
-        end
+
+for e1,e2 in pairs(ethereal_plants) do
+    for name,step in pairs(e2) do
+        pl = e1 .. "_" .. step
+        table.insert(target_plants,pl)
     end
 end
 
