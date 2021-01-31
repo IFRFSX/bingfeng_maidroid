@@ -1,6 +1,6 @@
 # BingFeng-Maidroid
 
-<img src=http://i.imgur.com/oWjrLtK.png>
+<img src=logo.png>
 
 This mod is inspired littleMaidMob mod (for Minecraft), and provides maid robots called 'maidroid', cores that command them to do farming, following their owner and so on, involved tools.
 
