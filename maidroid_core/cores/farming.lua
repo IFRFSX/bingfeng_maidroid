@@ -329,9 +329,10 @@ plant = function(self, dtime)
 			}
 
                         local plantname = get_plantname(itemname)
-			farming.place_seed(stack, minetest.get_player_by_name(self.owner_name), pointed_thing, plantname)
 
-			stack:take_item(1)
+			
+			stack = farming.place_seed(stack, minetest.get_player_by_name(self.owner_name), pointed_thing, plantname)
+
 			self:set_wield_item_stack(stack)
 		end
 		to_walk_randomly(self)
